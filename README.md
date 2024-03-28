@@ -21,11 +21,14 @@ Additionally, I attempted to discern which features within the dataset could cha
    To gain a deeper understanding of the data, I visualized it using Matplotlib by plotting histograms for each feature and generating a correlation matrix. Initially, I plotted histograms for all features and utilized the correlation matrix to identify candidates for reduction, considering the risk of overfitting due to the large number of features. I filtered out features that had a constant value of 0 across all rows and those with high correlation with other features. Total features after filtering: 17.
    features that I use: ['Destination Port', 'Fwd Packet Length Min', 'Bwd Packet Length Min', 'Flow Bytes/s', 'Flow IAT Min', 'Fwd Header Length', 'Bwd Header Length', 'Bwd Packets/s',
    'Min Packet Length', 'PSH Flag Count', 'ACK Flag Count', 'Down/Up Ratio', 'Init_Win_bytes_forward', 'Init_Win_bytes_backward', 'min_seg_size_forward', 'Active Std', 'Idle Std']
-   The subsequent images depict the filtered normalized features, providing a more manageable subset for analysis:
+HeatMap of all the provided features :
+![image](https://github.com/noabu/DS_home_assigment/assets/37350541/288de439-9493-4775-abba-4fa67e6155bb)
    
+The subsequent images are histograms of the filtered normalized features, providing a more manageable subset for analysis:
 ![image](https://github.com/noabu/DS_home_assigment/assets/37350541/aec2cc81-e0b3-4a8b-8bac-3560abfe2f09)
 ![image](https://github.com/noabu/DS_home_assigment/assets/37350541/a1c6907f-bcaf-4ba6-a66c-e6d86cc6c8a5)
-![image](https://github.com/noabu/DS_home_assigment/assets/37350541/54e55873-3cb6-44b2-829d-8d48f1e059c7)
+![image](https://github.com/noabu/DS_home_assigment/assets/37350541/290e146a-45e8-4b6a-abdf-23a3c0ffe132)
+
 
 
 
