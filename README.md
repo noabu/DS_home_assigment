@@ -38,9 +38,18 @@ From this we can learn that the common attacks in this dataset are: DoS, DDoS an
 ## ML technique:
 I chose the Random Forest classifier for its adeptness in handling imbalanced classes. Its structure allows it to distribute focus across different classes, mitigating the risk of overfitting to the majority class. 
 results:
+accuracy: 0.988
+precision: 0.82
+recall: 0.84
+
+
 
 ## insights from Random Forest classifier:
-
+1. The pivotal features within this dataset that may signal suspicious network flow include: Destination Port, Init_Win_bytes_backward, Init_Win_bytes_forward, Bwd Packets/s, Bwd Packet Length Min, Idle Std, Flow IAT Min, Bwd Header Length, Down/Up Ratio, Fwd Packet Length Min, Flow Bytes/s, PSH Flag Count, ACK Flag Count, Min Packet Length, Fwd Header Length, and Active Std.
+   based on:
+feature importances:
+![image](https://github.com/noabu/DS_home_assigment/assets/37350541/dceba4ba-e209-4ba2-ad93-6a72cc40edff)
+2. 
 
 ## Future work:
 1. Group the 14 types of attacks into 7 according to the division of the CSV files and see if there are other/more interesting insights.
