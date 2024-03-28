@@ -35,6 +35,17 @@ In addition I visualized the distribution of the target classes:
 ![image](https://github.com/noabu/DS_home_assigment/assets/37350541/e31971d3-ff2b-41e4-8e94-5fa03909b0d3)
 From this we can learn that the common attacks in this dataset are: DoS, DDoS and PortScan. in addition we learn the classes are not balance.
 
+## ML technique:
+I chose the Random Forest classifier for its adeptness in handling imbalanced classes. Its structure allows it to distribute focus across different classes, mitigating the risk of overfitting to the majority class. 
+results:
+
+## insights from Random Forest classifier:
+
+
+## Future work:
+1. Group the 14 types of attacks into 7 according to the division of the CSV files and see if there are other/more interesting insights.
+2. To train a classifier for each type of attack separately to check if it is possible to learn from it about the type of each attack.
+
 
 
 
