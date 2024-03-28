@@ -31,6 +31,12 @@ The subsequent images are histograms of the filtered features, providing a more 
 from this we can learn that the features are in different ranges (that why I chose to normlize the features) - some 0/1 (flags) some 0-500 some 0-120,000,000 etc. 
 Also, we can learn that there are peaks in the data which can indicate the behavior of the flow.
 
+In addition I visualized the distribution of the target classes:
+![image](https://github.com/noabu/DS_home_assigment/assets/37350541/e31971d3-ff2b-41e4-8e94-5fa03909b0d3)
+From this we can learn that the common attacks in this dataset are: DoS, DDoS and PortScan. in addition we learn the classes are not balance.
+
+
+
 
 
 
