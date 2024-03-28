@@ -24,10 +24,13 @@ Additionally, I attempted to discern which features within the dataset could cha
 HeatMap of all the provided features :
 ![image](https://github.com/noabu/DS_home_assigment/assets/37350541/288de439-9493-4775-abba-4fa67e6155bb)
    
-The subsequent images are histograms of the filtered normalized features, providing a more manageable subset for analysis:
-![image](https://github.com/noabu/DS_home_assigment/assets/37350541/aec2cc81-e0b3-4a8b-8bac-3560abfe2f09)
-![image](https://github.com/noabu/DS_home_assigment/assets/37350541/a1c6907f-bcaf-4ba6-a66c-e6d86cc6c8a5)
-![image](https://github.com/noabu/DS_home_assigment/assets/37350541/290e146a-45e8-4b6a-abdf-23a3c0ffe132)
+The subsequent images are histograms of the filtered features, providing a more manageable subset for analysis:
+![image](https://github.com/noabu/DS_home_assigment/assets/37350541/4df6565c-2bf1-435f-8eb0-46a952dc3177)
+![image](https://github.com/noabu/DS_home_assigment/assets/37350541/cb5b57e5-ac19-4d1e-96a8-f0d22a35ece9)
+![image](https://github.com/noabu/DS_home_assigment/assets/37350541/68df9239-0654-4fd3-b130-3cd593dcc099)
+from this we can learn that the features are in different ranges (that why I chose to normlize the features) - some 0/1 (flags) some 0-500 some 0-120,000,000 etc. 
+Also, we can learn that there are peaks in the data which can indicate the behavior of the flow.
+
 
 
 
