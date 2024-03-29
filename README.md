@@ -42,9 +42,7 @@ accuracy: 0.988
 precision: 0.82
 recall: 0.84
 
-
-
-## insights from Random Forest classifier:
+## Insights from Random Forest classifier:
 1. The pivotal features within this dataset that may signal suspicious network flow include:
    <br>Destination Port, Init_Win_bytes_backward, Init_Win_bytes_forward, Bwd Packets/s, Bwd Packet Length Min, Idle Std, Flow IAT Min,
    <br>Bwd Header Length, Down/Up Ratio, Fwd Packet Length Min, Flow Bytes/s, PSH Flag Count, ACK Flag Count, Min Packet Length, Fwd Header Length, and Active Std.
@@ -57,18 +55,17 @@ Detecting patterns in network traffic that include these features and exhibit ab
 This can be seen directly from the Partial Dependence Plot (that created based on the classifier I trained):
 ![image](https://github.com/noabu/DS_home_assigment/assets/37350541/52dba98d-3b97-4874-984e-6b8804584183)
 
-## insights using Linear Reggression:
-I wanted to check my 2nd insight by perform linear regression.
-because the CSV are splited by different type attack I chose to use only the dataframe that includes only DDoS attack. <br>
+## Insights using Linear Reggression:
+I wanted to check my 2nd insight by perform linear regression.<br>
+Given that the CSV files are segmented by different types of attacks, I opted to focus solely on the dataframe containing DDoS attacks. <br>
 the linear regression results:<br>
 Slope: -1.2786453377487048e-05 <br>
-because that the slope is negative it point on a negative relationship (as X increases, Y decreases) means as the port number is bigger, the greater the chance that it is a flow with suspicious behavior related yo DDoS attack . <br>
-This conclusion is the opposite from my 2nd insight. <br>
-The reason I can think about its mabye cause the model trained over all the classes where in this I look the data only from the DDoS CSV.
+because that the slope is negative it point on a negative relationship (as X increases, Y decreases), means the bigger port number, the greater the chance that it is a flow with suspicious behavior related yo DDoS attack . <br>
+This conclusion contradicts my 2nd insight. <br>
+One possible explanation for this discrepancy could be that the model was trained on data from all classes, whereas in this analysis, only data from the DDoS CSV was considered.
 ![image](https://github.com/noabu/DS_home_assigment/assets/37350541/5aa3e1c5-a919-41f7-b0a6-7916585a7fa2)
-So I perform linear regression over all CSV files:<br>
-Slope: -1.1065431906928372e-05 <br>
-Not as I expected here too the slope is negative.
+Therefore, I conducted linear regression across all CSV files, resulting in a slope of -1.1065431906928372e-05. <br>
+Contrary to my expectations, the slope remains negative in this analysis as well.
 ![image](https://github.com/noabu/DS_home_assigment/assets/37350541/34be3ce6-340c-4f3f-a061-9e51df3f82ab)
 
 
