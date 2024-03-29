@@ -22,7 +22,7 @@ Additionally, I attempted to discern which features within the dataset could cha
    features that I use:<br> [Destination Port, Fwd Packet Length Min, Bwd Packet Length Min, Flow Bytes/s, Flow IAT Min, Fwd Header Length, Bwd Header Length, Bwd Packets/s,
    Min Packet Length, PSH Flag Count, ACK Flag Count, Down/Up Ratio, Init_Win_bytes_forward, Init_Win_bytes_backward, min_seg_size_forward, Active Std, Idle Std]<br>
 Corellation matrix of all the provided features : <br> (figure 1)
-<a id="section-2"></a>
+<a id="section-1"></a>
 ![image](https://github.com/noabu/DS_home_assigment/assets/37350541/288de439-9493-4775-abba-4fa67e6155bb)
    
 The subsequent images are histograms of the filtered features, providing a more manageable subset for analysis: <br>
