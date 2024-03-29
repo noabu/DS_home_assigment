@@ -13,10 +13,10 @@ Additionally, I attempted to discern which features within the dataset could cha
    * Split the data into features an target. (related function: split_data_to_features_and_target)
    * Preprocess the labels: replace the labels to numerical (related function: target_to_numeric)
    * Preprocess the features data:
-   **I chose to merge the CSV files into a single dataset to simplify the process and train a single classifier. However, I acknowledged that this approach might lead to reduced accuracy and overlook important features relevant to certain attacks.<br> Before I concat them I checked that they include the same features and the same datatypes (related function: check_if_can_concat).
-   ** Checked if there are non numerical features (there weren't).
-   ** Checked for NaN values - the Flow Bytes feature contained missing values (NaN), prompting me to determine suitable replacements. Given that the traffic data was collected during 5 days in a row, I chose linear interpolation to minimize information loss. (related function: features_preprocessing)
-   ** Replace Infinite values in the Max value of the column . (related function: features_preprocessing).
+   <br> ** I chose to merge the CSV files into a single dataset to simplify the process and train a single classifier. However, I acknowledged that this approach might lead to reduced accuracy and overlook important features relevant to certain attacks.<br> Before I concat them I checked that they include the same features and the same datatypes (related function: check_if_can_concat).
+   <br> ** Checked if there are non numerical features (there weren't).
+   <br> ** Checked for NaN values - the Flow Bytes feature contained missing values (NaN), prompting me to determine suitable replacements. Given that the traffic data was collected during 5 days in a row, I chose linear interpolation to minimize information loss. (related function: features_preprocessing)
+   <br> ** Replace Infinite values in the Max value of the column . (related function: features_preprocessing).
 3. Visualizations & Features reduce: <br>(related functions: data_visualization, remove_low_variance_features, reduce_features_with_high_correlation, normalize_features)<br>
    To gain a deeper understanding of the data, I visualized it using Matplotlib by plotting histograms for each feature and generating a correlation matrix.<br>Initially, I plotted histograms for all features and utilized the correlation matrix to identify candidates for reduction, considering the risk of overfitting due to the large number of features.<br> I filtered out features that had a constant value of 0 across all rows and those with high correlation with other features. Total features after filtering: 17.
    features that I use:<br> [Destination Port, Fwd Packet Length Min, Bwd Packet Length Min, Flow Bytes/s, Flow IAT Min, Fwd Header Length, Bwd Header Length, Bwd Packets/s,
