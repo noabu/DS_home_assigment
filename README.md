@@ -49,17 +49,33 @@ recall: 0.84
    <br>Destination Port, Init_Win_bytes_backward, Init_Win_bytes_forward, Bwd Packets/s, Bwd Packet Length Min, Idle Std, Flow IAT Min,
    <br>Bwd Header Length, Down/Up Ratio, Fwd Packet Length Min, Flow Bytes/s, PSH Flag Count, ACK Flag Count, Min Packet Length, Fwd Header Length, and Active Std.
    based on:
-feature importances:
+Classifier feature importances:
 ![image](https://github.com/noabu/DS_home_assigment/assets/37350541/dceba4ba-e209-4ba2-ad93-6a72cc40edff)
 Detecting patterns in network traffic that include these features and exhibit abnormal behaviors can suggest a suspicious connection.
-2. The larger the port number, the greater the chance that it is a flow with suspicious behavior that affects the ability to predict whether it is an attack or not.
-This can be seen directly from the Partial Dependence Plot:
-![image](https://github.com/noabu/DS_home_assigment/assets/37350541/526eb588-9d85-4fd9-8abd-8053b935d573)
+2. This insight focused on DDoS attack: <br>
+   The smaller the port number, the greater the chance that it is a flow with suspicious behavior related yo DDoS attacks.
+This can be seen directly from the Partial Dependence Plot (that created based on the classifier I trained):
+![image](https://github.com/noabu/DS_home_assigment/assets/37350541/52dba98d-3b97-4874-984e-6b8804584183)
+
+## insights using Linear Reggression:
+I wanted to check my 2nd insight by perform linear regression.
+because the CSV are splited by different type attack I chose to use only the dataframe that includes only DDoS attack. <br>
+the linear regression results:<br>
+Slope: -1.2786453377487048e-05 <br>
+because that the slope is negative it point on a negative relationship (as X increases, Y decreases) means as the port number is bigger, the greater the chance that it is a flow with suspicious behavior related yo DDoS attack . <br>
+This conclusion is the opposite from my 2nd insight. <br>
+The reason I can think about its mabye cause the model trained over all the classes where in this I look the data only from the DDoS CSV.
+![image](https://github.com/noabu/DS_home_assigment/assets/37350541/5aa3e1c5-a919-41f7-b0a6-7916585a7fa2)
+So I perform linear regression over all CSV files:<br>
+Slope: -1.1065431906928372e-05 <br>
+Not as I expected here too the slope is negative.
+![image](https://github.com/noabu/DS_home_assigment/assets/37350541/34be3ce6-340c-4f3f-a061-9e51df3f82ab)
 
 
 ## Future work:
 1. Group the 14 types of attacks into 7 according to the division of the CSV files (or binary classifier- Attack/Benign) and see if there are other/more interesting insights.
 2. To train a classifier for each type of attack separately to check if it is possible to learn from it about the type of each attack.
+3. Continue to explore the contradiction of Insight 2 & Insight 3.
 
 
 
