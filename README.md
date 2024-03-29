@@ -52,7 +52,10 @@ recall: 0.84
 feature importances:
 ![image](https://github.com/noabu/DS_home_assigment/assets/37350541/dceba4ba-e209-4ba2-ad93-6a72cc40edff)
 Detecting patterns in network traffic that include these features and exhibit abnormal behaviors can suggest a suspicious connection.
-2. 
+2. The larger the port number, the greater the chance that it is a flow with suspicious behavior that affects the ability to predict whether it is an attack or not.
+This can be seen directly from the Partial Dependence Plot:
+![image](https://github.com/noabu/DS_home_assigment/assets/37350541/526eb588-9d85-4fd9-8abd-8053b935d573)
+
 
 ## Future work:
 1. Group the 14 types of attacks into 7 according to the division of the CSV files (or binary classifier- Attack/Benign) and see if there are other/more interesting insights.
