@@ -21,7 +21,8 @@ Additionally, I attempted to discern which features within the dataset could cha
    To gain a deeper understanding of the data, I visualized it using Matplotlib by plotting histograms for each feature and generating a correlation matrix.<br>Initially, I plotted histograms for all features and utilized the correlation matrix to identify candidates for reduction, considering the risk of overfitting due to the large number of features.<br> I filtered out features that had a constant value of 0 across all rows and those with high correlation with other features. Total features after filtering: 17.
    features that I use:<br> [Destination Port, Fwd Packet Length Min, Bwd Packet Length Min, Flow Bytes/s, Flow IAT Min, Fwd Header Length, Bwd Header Length, Bwd Packets/s,
    Min Packet Length, PSH Flag Count, ACK Flag Count, Down/Up Ratio, Init_Win_bytes_forward, Init_Win_bytes_backward, min_seg_size_forward, Active Std, Idle Std]<br>
-Corellation matrix of all the provided features : <br> (figure 1) [Section 1](#section-1)
+Corellation matrix of all the provided features : <br> (figure 1)
+<a id="section-2"></a>
 ![image](https://github.com/noabu/DS_home_assigment/assets/37350541/288de439-9493-4775-abba-4fa67e6155bb)
    
 The subsequent images are histograms of the filtered features, providing a more manageable subset for analysis: <br>
