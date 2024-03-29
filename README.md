@@ -56,7 +56,7 @@ Classifier feature importances:
 ![image](https://github.com/noabu/DS_home_assigment/assets/37350541/dceba4ba-e209-4ba2-ad93-6a72cc40edff)
 Detecting patterns in network traffic that include these features and exhibit abnormal behaviors can suggest a suspicious connection.
 2. This insight focused on DDoS attack: <br>
-   The smaller the port number, the greater the chance that it is a flow with suspicious behavior related yo DDoS attacks.
+   The smaller the port number, the greater the chance that it is a flow with suspicious behavior related to DDoS attacks.
 This can be seen directly from the Partial Dependence Plot (that created based on the classifier I trained):
 ![image](https://github.com/noabu/DS_home_assigment/assets/37350541/52dba98d-3b97-4874-984e-6b8804584183)
 
