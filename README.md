@@ -21,17 +21,21 @@ Additionally, I attempted to discern which features within the dataset could cha
    To gain a deeper understanding of the data, I visualized it using Matplotlib by plotting histograms for each feature and generating a correlation matrix.<br>Initially, I plotted histograms for all features and utilized the correlation matrix to identify candidates for reduction, considering the risk of overfitting due to the large number of features.<br> I filtered out features that had a constant value of 0 across all rows and those with high correlation with other features. Total features after filtering: 17.
    features that I use:<br> [Destination Port, Fwd Packet Length Min, Bwd Packet Length Min, Flow Bytes/s, Flow IAT Min, Fwd Header Length, Bwd Header Length, Bwd Packets/s,
    Min Packet Length, PSH Flag Count, ACK Flag Count, Down/Up Ratio, Init_Win_bytes_forward, Init_Win_bytes_backward, min_seg_size_forward, Active Std, Idle Std]<br>
-HeatMap of all the provided features :
+Corellation matrix of all the provided features : (figure 1)(#section-1)
 ![image](https://github.com/noabu/DS_home_assigment/assets/37350541/288de439-9493-4775-abba-4fa67e6155bb)
    
-The subsequent images are histograms of the filtered features, providing a more manageable subset for analysis:
+The subsequent images are histograms of the filtered features, providing a more manageable subset for analysis: <br>
+(figure 2)
 ![image](https://github.com/noabu/DS_home_assigment/assets/37350541/4df6565c-2bf1-435f-8eb0-46a952dc3177)
+(figure 3)
 ![image](https://github.com/noabu/DS_home_assigment/assets/37350541/cb5b57e5-ac19-4d1e-96a8-f0d22a35ece9)
+(figure 4)
 ![image](https://github.com/noabu/DS_home_assigment/assets/37350541/68df9239-0654-4fd3-b130-3cd593dcc099)
 from this we can conclude that the features are in different ranges (that's why I chose to normlize the features) - some 0/1 (flags) some 0-500 some 0-120,000,000 etc. 
 Also, we can learn that there are peaks in the data which can indicate the behavior of the flow.
 
-In addition I visualized the distribution of the target classes:
+In addition I visualized the distribution of the target classes: <br>
+(figure 5)
 ![image](https://github.com/noabu/DS_home_assigment/assets/37350541/e31971d3-ff2b-41e4-8e94-5fa03909b0d3)
 From this we can conclude that the common attacks in this dataset are: DoS, DDoS and PortScan. in addition we learn the classes are not balanced.
 
@@ -55,24 +59,17 @@ Detecting patterns in network traffic that include these features and exhibit ab
 This can be seen directly from the Partial Dependence Plot (that created based on the classifier I trained):
 ![image](https://github.com/noabu/DS_home_assigment/assets/37350541/52dba98d-3b97-4874-984e-6b8804584183)
 
-## Insights using Linear Reggression:
-I wanted to check my 2nd insight by perform linear regression.<br>
-Given that the CSV files are segmented by different types of attacks, I opted to focus solely on the dataframe containing DDoS attacks. <br>
-the linear regression results:<br>
-Slope: -1.2786453377487048e-05 <br>
-because that the slope is negative it point on a negative relationship (as X increases, Y decreases), means the bigger port number, the greater the chance that it is a flow with suspicious behavior related yo DDoS attack . <br>
-This conclusion contradicts my 2nd insight. <br>
-One possible explanation for this discrepancy could be that the model was trained on data from all classes, whereas in this analysis, only data from the DDoS CSV was considered.
-![image](https://github.com/noabu/DS_home_assigment/assets/37350541/5aa3e1c5-a919-41f7-b0a6-7916585a7fa2)
-Therefore, I conducted linear regression across all CSV files, resulting in a slope of -1.1065431906928372e-05. <br>
-Contrary to my expectations, the slope remains negative in this analysis as well.
-![image](https://github.com/noabu/DS_home_assigment/assets/37350541/34be3ce6-340c-4f3f-a061-9e51df3f82ab)
+## Insights using Correlation Matrix:
+Not all the features in the data contribute to the understanding of whether there was an attack or not. <br>
+The reasons are:
+* Some of them have the same value over all the data, so it doesn't add any interesting information to me.
+* There is a high degree of compatibility between some of the features, so the use of all of them is unnecessary and can even create an overfit on the data.
+  - [figure 1](#section-1)
 
 
 ## Future work:
 1. Group the 14 types of attacks into 7 according to the division of the CSV files (or binary classifier- Attack/Benign) and see if there are other/more interesting insights.
 2. To train a classifier for each type of attack separately to check if it is possible to learn from it about the type of each attack.
-3. Continue to explore the contradiction of Insight 2 & Insight 3.
 
 
 
