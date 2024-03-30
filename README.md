@@ -1,20 +1,20 @@
 # DS_home_assigment
-## task's goal:
-conducting an Exploratory Data Analysis (EDA) on the provided dataset, CICIDS2017. The objective is to extract three notable insights from the data, utilizing both Machine Learning (ML) or Deep Learning (DL) techniques and a recommendation system, tailored to my preferences.
+## Task's goal:
+Conducting an Exploratory Data Analysis (EDA) on the provided dataset, CICIDS2017. The objective is to extract three notable insights from the data, utilizing both Machine Learning (ML) or Deep Learning (DL) techniques and a recommendation system, tailored to my preferences.
 
-## Data detailes:
+## Data resources:
 I dowloanded the data from:<br>
 Iman Sharafaldin, Arash Habibi Lashkari, and Ali A. Ghorbani, “Toward Generating a New Intrusion Detection Dataset and Intrusion Traffic Characterization”, 4th International Conference on Information Systems Security and Privacy (ICISSP), Portugal, January 2018 <br>
 https://www.unb.ca/cic/datasets/ids-2017.html<br>
 I couldn't upload it to the git repository because of thier size. so you can download it and add to the folder data_files in the project.<br>
 
-## work process:
+## Work process:
 1. Import the dataset and understand what it represents and what the features represent:<br>
 The dataset encompasses network traffic containing both attack instances and benign behavior.<br> It comprises eight distinct CSV files, each focusing on a unique attack type: Denial of Service (DoS), Distributed Denial of Service (DDoS), Web Attack, PortScan, Botnet activity, Infiltration and Brute Force attacks. The dataset was collected over a period of 5 days.<br>
 Each row in the dataset represents a network flow (which means a sequence of packets that share common characteristics such as source and destination IP address, source and destination PORT, protocol type, etc.). total rows:  2,830,743.<br>
 each column is a feature that presents various aspects of network traffic and attacks. total features: 77.<br>
 some of the features represent packets length, packets amount, flow duration, interval arrival time of packets, Flags of TCP etc.<br>
-Additionally, I attempted to discern which features within the dataset could characterize different types of attacks. <br>For instance, in the case of Denial of Service (DoS) attacks, the volume of transmitted packets and the duration of the flow may signify suspicious traffic. <br>Similarly, for Brute Force attacks, characteristics such as the quantity of packets sent in both directions, packet lengths, and flow duration can reveal suspicious patterns. <br>Notably, some of these insights were later corroborated by the classifier I trained.<br>
+Additionally, I attempted to distinguish which features within the dataset could characterize different types of attacks. <br>For instance, in the case of Denial of Service (DoS) attacks, the volume of transmitted packets and the duration of the flow may indicate suspicious traffic. <br>Similarly, for Brute Force attacks, characteristics such as the quantity of packets sent in both directions, packet lengths, and flow duration can reveal suspicious patterns. <br>Notably, some of these insights will later be approved by the classifier I trained.<br>
 2.Preprocess the data:<br>
    * Split the data into features an target. (related function: split_data_to_features_and_target)
    * Preprocess the labels: replace the labels to numerical (related function: target_to_numeric)
@@ -38,7 +38,7 @@ The subsequent images are histograms of the filtered features, providing a more 
 ![image](https://github.com/noabu/DS_home_assigment/assets/37350541/cb5b57e5-ac19-4d1e-96a8-f0d22a35ece9)
 (figure 4)
 ![image](https://github.com/noabu/DS_home_assigment/assets/37350541/68df9239-0654-4fd3-b130-3cd593dcc099)
-from this we can conclude that the features are in different ranges (that's why I chose to normlize the features) - some 0/1 (flags) some 0-500 some 0-120,000,000 etc. 
+From this we can conclude that the features are in different ranges (that's why I chose to normlize the features) - some 0/1 (flags) some 0-500 some 0-120,000,000 etc. 
 Also, we can learn that there are peaks in the data which can indicate the behavior of the flow.
 
 In addition I visualized the distribution of the target classes: <br>
@@ -69,22 +69,11 @@ This can be seen directly from the Partial Dependence Plot (that created based o
 ## Insights using Correlation Matrix:
 Not all the features in the data contribute to the understanding of whether there was an attack or not. <br>
 The reasons are:
-* Some of them have the same value over all the data, so it doesn't add any interesting information to me.
+* Some of them have the same value over all the data, so it doesn't add any interesting information.
 * There is a high degree of compatibility between some of the features, so the use of all of them is unnecessary and can even create an overfit on the data.
-  - [figure 1](#section-1)
+[figure 1](#section-1)
 
 
 ## Future work:
-1. Group the 14 types of attacks into 7 according to the division of the CSV files (or binary classifier- Attack/Benign) and see if there are other/more interesting insights.
-2. To train a classifier for each type of attack separately to check if it is possible to learn from it about the type of each attack.
-
-
-
-
-
-
-
-
-
-
-
+1. Group the 14 types of attacks into 7 groups according to the division of the CSV files (or binary classifier- Attack/Benign) and see if there are other/more interesting insights.
+2. Train a classifier for each type of attack separately to check if it is possible to learn from it about the type of each attack.
